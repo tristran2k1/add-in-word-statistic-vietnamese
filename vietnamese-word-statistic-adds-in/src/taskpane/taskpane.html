@@ -1,0 +1,55 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contoso Task Pane Add-in</title>
+
+  <!-- Office JavaScript API -->
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+  <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+  <link rel="stylesheet"
+    href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css" />
+
+  <!-- Template styles -->
+  <link href="taskpane.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+  <section id="sideload-msg" class="ms-welcome__main">
+    <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+  </section>
+  <main id="app-body" class="ms-welcome__main" style="display: none;">
+
+    <h2 class="ms-font-xl">Introduction to Natural Language Processing<br>Word Add-in Project</h2>
+
+    <button role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">Phân tích</button>
+    </br>
+      <table id='vn' class="tftable" border="1">
+      <tr><td>Chữ cái</td><td id='letters'></td></tr>
+      <tr><td>Ký tự (bao gồm dấu cách)</td><td id='chars'></td></tr>
+      <tr><td>Từ</td><td id='words'></td></tr>
+      <tr><td>Từ phân biệt</td><td id='unique'></td></tr>
+      <tr><td>Câu</td><td id='sentences'></td></tr>
+      <tr><td>Đoạn văn</td><td id='paragraphs'></td></tr>
+      <tr><td>Dấu chấm câu</td><td id='punc'></td></tr>
+      <tr><td>Số câu trung bình mỗi đoạn văn</td><td id='sen-per-para'></td></tr>
+      <tr><td>Số từ trung bình mỗi câu</td><td id='word-per-para'></td></tr>
+      <tr><td>Số chữ trung bình mỗi từ</td><td id='letter-per-word'></td></tr>
+      <tr><td>Số ký tự trung bình mỗi từ</td><td id='syllables'></td></tr>
+      <tr><td>Số lượng âm tiết mỗi từ</td><td id='syllables-per-word'></td></tr>
+      <!-- <tr><td>Từ</td><td id='word'></td></tr> -->
+      </table>
+  
+      
+  </main>
+</body>
+
+</html>
