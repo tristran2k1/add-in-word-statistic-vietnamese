@@ -21,7 +21,7 @@ Office.onReady((info) => {
 function runWorker(data, dom) {
   worker.postMessage(JSON.stringify(data));
   worker.onmessage = e => {
-    const { total_letter_count, total_char_count, total_syllable_count, total_punctuation_mark_count, total_word_count, unique_word_count, total_sentence_count, total_paragraph_count, words, tmp } = e.data;
+    const { total_letter_count, total_char_count, total_syllable_count, total_punctuation_mark_count, total_word_count, unique_word_count, total_sentence_count, total_paragraph_count } = e.data;
 
     dom.getElementById('letters').innerText = total_letter_count;
     dom.getElementById('chars').innerText = total_char_count;
@@ -35,7 +35,8 @@ function runWorker(data, dom) {
     dom.getElementById('letter-per-word').innerText = total_letter_count / total_word_count;
     dom.getElementById('syllables').innerText = total_syllable_count;
     dom.getElementById('syllables-per-word').innerText = total_syllable_count / total_word_count;
-    dom.getElementById('word').innerText = words;
+    // dom.getElementById('word').innerText = words;
+    // dom.getElementById('readability').innerText = readabilityLevel;
 
   };
 }

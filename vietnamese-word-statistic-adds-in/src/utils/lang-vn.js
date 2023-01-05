@@ -1,5 +1,6 @@
-import { loadDict } from './loadDict';
+import { loadDict, loadSinoDict } from './loadDict';
 export const VNDICT = loadDict();
+// export const SINODICT = loadSinoDict();
 
 import Tokenizer from './tokenizer';
 const tokenizer = new Tokenizer();
@@ -60,6 +61,23 @@ export function getWord(sentToken) {
   }
   return words;
 }
+
+// export function countSinoWords(words){
+//   let numOfSino = 0;
+//   for (const word of words) {
+//     if (SINODICT.indexOf(word) !== -1) {
+//       numOfSino += 1;
+//     }
+//   }
+//   return numOfSino;
+// }
+
+// export function evaluateReadability(total_sino_count, total_word_count, total_sentence_count){
+//   // RL = 0.27WD + 0.13SL + 1.74
+//   let SL = total_word_count / total_sentence_count;
+//   let WD = total_sino_count / total_word_count;
+//   return 0.27*WD + 0.13*SL + 1.74;
+// }
 
 function flagTokens(arr, start, end) {
   for (let i = start; i < end; i++) {
